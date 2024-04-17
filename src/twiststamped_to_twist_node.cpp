@@ -27,9 +27,9 @@ int main(int argc, char **argv)
     ros::init(argc, argv, "twiststamped_to_twist");
     ros::NodeHandle n;
     
-    pub = n.advertise<geometry_msgs::Twist>("/output",10);
+    pub = n.advertise<geometry_msgs::Twist>("/cmd_vel",10);
 
-    ros::Subscriber sub = n.subscribe("/input",10,twistStampedCallback);
+    ros::Subscriber sub = n.subscribe("/cmd_vel_stamped",10,twistStampedCallback);
     
     ros::spin();
     
